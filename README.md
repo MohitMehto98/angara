@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Developer Assignment: Jewelry Product Detail Page
 
-## Getting Started
+## Objective
+Evaluate the candidate's expertise in **React.js/Next.js**, ability to integrate APIs, implement SEO best practices, and create high-performance web pages optimized for Lighthouse scores.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Assignment Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Title:** Build a Jewelry Product Detail Page with Variations  
+**Estimated Duration:** 6–8 hours  
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Deliverables
+1. **Functional Product Detail Page.**  
+2. **Codebase with instructions** (`README.md`).  
+3. **Deployed live demo** (optional).  
+4. **Summary document** explaining variations and SEO optimizations.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Task: Create a Jewelry Product Detail Page
 
-To learn more about Next.js, take a look at the following resources:
+### Page Requirements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### **1. Layout**
+1. **Product Image Section**  
+   - Main image display with a carousel of thumbnails.  
+   - Dynamically update the main image based on thumbnail or variation selection.  
+   - Include a **zoom-in** functionality for the main image.  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Product Info Section**  
+   - Display:  
+     - Product title.  
+     - Price (dynamic based on user selections).  
+     - Exclusive offers.  
+     - Customer reviews.  
+   - Allow customization of:  
+     - Gemstone type (e.g., Aquamarine, Sapphire, Diamond).  
+     - Gemstone quality (e.g., Good, Better, Best, Heirloom).  
+     - Metal type (e.g., White Gold, Yellow Gold, Rose Gold).  
+     - Carat weight.  
+     - Ring size (with a **"Size Guide"** link).  
+   - Update product details dynamically (e.g., price, description, images) based on user selections.
 
-## Deploy on Vercel
+3. **Price Breakdown Section**  
+   - Show a table with:  
+     - Components (e.g., metal, gemstones, making charges).  
+     - Weight, Rate, and Value.  
+   - Dynamically calculate and display the **Grand Total** as variations change.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Related Products Section**  
+   - Display a carousel of similar products (e.g., **"You May Also Like"**).  
+   - Include thumbnail, name, and price range for each product.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+### Functionality
+
+1. **Dynamic Variation Handling**
+   - Fetch product data from a **mock API**.  
+   - Update product details dynamically based on selected attributes.  
+   - Disable unavailable options (e.g., out-of-stock sizes).  
+   - Display clear error messages for invalid actions.
+
+2. **Add to Bag Button**
+   - Reflect the selected variation in the button.  
+   - Disable the button if the selection is invalid.
+
+---
+
+### SEO Optimization
+
+1. **Meta Tags**
+   - Add meta tags for `title`, `description`, and `keywords`.
+
+2. **Structured Data** (JSON-LD)
+   - Use the `@type: "Product"` schema with attributes such as:  
+     - Name  
+     - Description  
+     - SKU  
+     - Image URLs  
+     - Price  
+     - Availability  
+     - Brand  
+
+3. **Lighthouse SEO Score**
+   - Ensure a **100/100 Lighthouse SEO score** by:  
+     - Adding `alt` attributes to all images.  
+     - Lazy-loading images for optimal performance.
+
+---
+
+### Dummy Data
+
+Use the following JSON as a mock API response:
+
+```json
+{
+  "id": "SR0160AQ",
+  "title": "Classic Aquamarine and Diamond Three Stone Engagement Ring",
+  "base_price": 237589,
+  "exclusive_offer": "Get 20% off on making charges",
+  "reviews": 7,
+  "images": [
+    "https://via.placeholder.com/500x500?text=Main+Image",
+    "https://via.placeholder.com/100x100?text=Thumbnail1",
+    "https://via.placeholder.com/100x100?text=Thumbnail2",
+    "https://via.placeholder.com/100x100?text=Thumbnail3"
+  ],
+  "variations": {
+    "gemstone": ["Aquamarine", "Diamond", "Sapphire"],
+    "quality": ["Good", "Better", "Best", "Heirloom"],
+    "metal": ["White Gold", "Yellow Gold", "Rose Gold"],
+    "carat_weight": [1.5, 1.8, 2.0],
+    "ring_size": [6, 7, 8, 9, 10]
+  },
+  "price_breakdown": {
+    "metal": { "rate": 4567, "weight": 3.87, "value": 18528 },
+    "stones": [
+      { "type": "Aquamarine", "carat": 1.12, "value": 62748 },
+      { "type": "Diamond", "carat": 0.46, "value": 143175 }
+    ],
+    "making_charges": 6218,
+    "subtotal": 230669,
+    "gst": 6920,
+    "grand_total": 237589
+  }
+}
