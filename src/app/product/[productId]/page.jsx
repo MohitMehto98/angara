@@ -1,12 +1,8 @@
 import React from "react";
-import ProductInfo from "./ProductInfo";
-import ProductImage from "./ProductImage";
+import ProductDetail from "./ProductDetails";
 
-export default function ProductDetail() {
-  return (
-    <div className="flex flex-col lg:flex-row min-h-screen bg-gray-50">
-      <ProductImage />
-      <ProductInfo />
-    </div>
-  );
+export default async function page({ params }) {
+  const { productId } = await params;
+
+  return <ProductDetail productId={productId} />;
 }

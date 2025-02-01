@@ -1,19 +1,27 @@
 "use client";
 
 import React from "react";
+import { StarIcon } from "@heroicons/react/20/solid";
 
-const ProductInfo = () => {
+const ProductInfo = ({ product }) => {
+  console.log(product);
   return (
-    <div className="flex-1 bg-gray-100 p-8 lg:p-16 flex flex-col">
-      <h1 className="text-2xl lg:text-4xl font-bold mb-4">
-        Classic Aquamarine and Diamond Ring
-      </h1>
-      <p className="text-xl text-gray-700 mb-6">
-        ₹237,589 <span className="text-sm text-green-600">(20% Off)</span>
+    <div className="flex-1 bg-slate-50 p-8 lg:p-16 flex flex-col">
+      <h1 className="text-xl lg:text-xl mb-4">{product.title}</h1>
+      <p className="flex text-sm">
+        {Array.from({ length: 5 }, (_, index) => (
+          <StarIcon key={index} className="w-4 h-4 text-black-500" />
+        ))}
+        <span className="ml-3 text-xs border-b">
+          {product.reviews}: {product.reviews > 1 ? "Reviews" : "Review"}
+        </span>
       </p>
-      <p className="text-gray-600 mb-8">
-        Get this elegant Aquamarine and Diamond ring, perfect for every
-        occasion. Customizable options available.
+      <p className="text-2xl text-gray-900 my-2">
+        ₹{product.base_price}
+        {/* <span className="text-sm text-green-600">(20% Off)</span> */}
+      </p>
+      <p className="text-green-700 text-sm">
+        Exclusive Offer: <span>{product.exclusive_offer}</span>
       </p>
 
       {/* Customization Options */}
