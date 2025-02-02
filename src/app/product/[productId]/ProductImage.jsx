@@ -6,7 +6,7 @@ import React from "react";
 
 const productImage = ({ media }) => {
   return (
-    <div className="flex-1 flex items-center justify-center bg-white p-2 bg-gray-100">
+    <div className="flex-1 flex items-center justify-center  p-2 bg-gray-100">
       <CustomCarousel media={media} />
     </div>
   );
