@@ -6,7 +6,7 @@ import React from "react";
 
 const Header = () => {
   const { cartItems } = useCartContext();
-  console.log(cartItems)
+  console.log(cartItems);
   return (
     <nav className="bg-white shadow-sm  z-50 fixed top-0 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,6 +16,8 @@ const Header = () => {
               src="https://www.angara.in/cdn/shop/files/angara-logo_f109f2a4-9991-42d7-b0d2-0976c58e7f94.svg?v=1686499699&width=800"
               alt="Angara Logo"
               className="h-10"
+              width="200" // Set the desired width
+              height="40" // Set the desired height
             />
           </div>
           <div className="flex items-center space-x-6">
