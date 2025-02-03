@@ -1,5 +1,3 @@
-import React from "react";
-
 export const ThumbnailCarousel = ({
   media,
   setSelectedIndex,
@@ -12,8 +10,8 @@ export const ThumbnailCarousel = ({
           key={index}
           className={`w-16 h-16 sm:w-20 sm:h-20 border-2 rounded-md overflow-hidden transition-transform ${
             selectedIndex === index
-              ? "border-blue-500 scale-105"
-              : "border-gray-300 hover:border-gray-500"
+              ? " scale-105 opacity-50"
+              : " hover:border-gray-300 opacity-100"
           }`}
           onClick={() => setSelectedIndex(index)}
           aria-label={`Select thumbnail ${index + 1}`}

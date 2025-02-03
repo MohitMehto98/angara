@@ -11,7 +11,6 @@ const CarouselOption = ({
 }) => {
   return (
     <div className="space-y-4">
-      {/* Ring Size Label and Info Icon */}
       <div className="flex items-center">
         <p className="text-sm font-medium text-gray-700">{label}</p>
         <div className="group relative ml-2">
@@ -33,8 +32,6 @@ const CarouselOption = ({
           </div>
         </div>
       </div>
-
-      {/* Ring Size Options */}
       <ul className="flex flex-wrap gap-2">
         {values.map((ringSize, index) => (
           <li
