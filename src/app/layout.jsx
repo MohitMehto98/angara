@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Antara | Classic Aquamarine and Diamond Three Stone Engagement Ring",
+  title: "Angara | Classic Aquamarine and Diamond Three Stone Engagement Ring",
   description:
     "Explore the exquisite jewelry collection with detailed product information, including price breakdown, variations, and reviews.",
   keywords: "engagement ring, jewelry, aquamarine, diamond, gold, luxury",

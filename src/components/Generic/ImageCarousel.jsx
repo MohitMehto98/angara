@@ -28,7 +28,6 @@ export default function ImageCarousel() {
       clearInterval(ref.current);
     };
   }, []);
-  console.log(ref);
   return (
     <>
       <div
