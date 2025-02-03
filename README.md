@@ -49,8 +49,8 @@ Evaluate the candidate's expertise in **React.js/Next.js**, ability to integrate
    - Dynamically calculate and display the **Grand Total** as variations change.[done]
 
 4. **Related Products Section**  
-   - Display a carousel of similar products (e.g., **"You May Also Like"**).  
-   - Include thumbnail, name, and price range for each product.
+   - Display a carousel of similar products (e.g., **"You May Also Like"**).  [done]
+   - Include thumbnail, name, and price range for each product.[done]
 
 ---
 
