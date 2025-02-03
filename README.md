@@ -1,150 +1,66 @@
-# Frontend Developer Assignment: Jewelry Product Detail Page
+## Getting Started
 
-## Objective
-Evaluate the candidate's expertise in **React.js/Next.js**, ability to integrate APIs, implement SEO best practices, and create high-performance web pages optimized for Lighthouse scores.
+### Prerequisites
 
----
+Ensure that you have **Node.js** and **npm** installed. You can download Node.js from [here](https://nodejs.org/).
 
-## Assignment Overview
+### 1. Clone the repository
 
-**Title:** Build a Jewelry Product Detail Page with Variations  
-**Estimated Duration:** 6–8 hours  
+Clone the project to your local machine using the following command:
 
-### Deliverables
-1. **Functional Product Detail Page.**  
-2. **Codebase with instructions** (`README.md`).  
-3. **Deployed live demo** (optional).  
-4. **Summary document** explaining variations and SEO optimizations.
+```bash
+git clone https://github.com/MohitMehto98/angara.git
+```
 
----
+cd jewellery
+npm install
 
-## Task: Create a Jewelry Product Detail Page
+- npm run dev
+- copy or enter the mentioned test id and check the functionalities
 
-### Page Requirements
+Enjoy
 
-#### **1. Layout**
-1. **Product Image Section**  
-   - Main image display with a carousel of thumbnails.  [done]
-   - Dynamically update the main image based on thumbnail or variation selection.  [done]
-   - Include a **zoom-in** functionality for the main image.  
+Demo Link:- https://angara-silk.vercel.app/
 
-2. **Product Info Section**  
-   - Display:  
-     - Product title.  [done]
-     - Price (dynamic based on user selections).  
-     - Exclusive offers.  [done]
-     - Customer reviews.  [done]
-   - Allow customization of:  
-     - Gemstone type (e.g., Aquamarine, Sapphire, Diamond).  [done]
-     - Gemstone quality (e.g., Good, Better, Best, Heirloom).  [done]
-     - Metal type (e.g., White Gold, Yellow Gold, Rose Gold).  [done]
-     - Carat weight.  [done]
-     - Ring size (with a **"Size Guide"** link).  [done]
-   - Update product details dynamically (e.g., price, description, images) based on user selections.[done]
+# Jewelry Product Detail Page
 
-3. **Price Breakdown Section**  
-   - Show a table with:  
-     - Components (e.g., metal, gemstones, making charges).  [done]
-     - Weight, Rate, and Value.  [done]
-   - Dynamically calculate and display the **Grand Total** as variations change.[done]
+## Technologies Used
 
-4. **Related Products Section**  
-   - Display a carousel of similar products (e.g., **"You May Also Like"**).  [done]
-   - Include thumbnail, name, and price range for each product.[done]
+- **Next.js**: React framework for building the app.
+- **React**: Library for building user interfaces.
+- **Tailwind CSS**: For utility-first CSS styling and responsive design.
+- **Schema.org Structured Data**: To optimize SEO using JSON-LD.
+- **React Context API**: For managing product and cart state.
 
----
+## SEO and Performance Improvements
 
-### Functionality
+### Meta Tags
 
-1. **Dynamic Variation Handling**
-   - Fetch product data from a **mock API**.  [done]
-   - Update product details dynamically based on selected attributes.  [done]
-   - Disable unavailable options (e.g., out-of-stock sizes).  []
-   - Display clear error messages for invalid actions.[]
+Meta tags are used to improve SEO. The following meta tags are included:
 
-2. **Add to Bag Button**
-   - Reflect the selected variation in the button. [done] 
-   - Disable the button if the selection is invalid.[]
+- **Title**: Jewelry Product Detail Page
+- **Description**: Explore the exquisite jewelry collection with detailed product information, including price breakdown, variations, and reviews.
+- **Keywords**: engagement ring, jewelry, aquamarine, diamond, gold, luxury
+- **Robots**: index, follow
 
----
+### Structured Data (JSON-LD)
 
-### SEO Optimization
+The product schema includes:
 
-1. **Meta Tags**
-   - Add meta tags for `title`, `description`, and `keywords`.
+- **Product Name**
+- **Description**
+- **SKU**
+- **Image URLs**
+- **Price**
+- **Availability**
+- **Brand**
 
-2. **Structured Data** (JSON-LD)
-   - Use the `@type: "Product"` schema with attributes such as:  
-     - Name  
-     - Description  
-     - SKU  
-     - Image URLs  
-     - Price  
-     - Availability  
-     - Brand  
+### Performance Optimization
 
-3. **Lighthouse SEO Score**
-   - Ensure a **100/100 Lighthouse SEO score** by:  
-     - Adding `alt` attributes to all images.  [done]
-     - Lazy-loading images for optimal performance.[done]
+- **Lazy Loading**: Images are lazy-loaded for better performance.
+- **Image Optimization**: All images have alt attributes for accessibility and SEO.
+- **Lighthouse SEO Score**: 100
 
----
+### Responsiveness
 
-
-Evaluation Criteria
-Functionality:
-Correctly implements dynamic updates for variations.
-Accurate price calculations for selected variations.
-Functional and responsive design for desktop and mobile.
-Code Quality:
-Modular and reusable components.
-Proper state management (e.g., React useState, useReducer, or Context API).
-SEO Optimization:
-Proper meta tags, structured data, and accessibility.
-Lighthouse SEO score of 100.
-Documentation:
-Clear setup and execution steps in README.md.
-Explanation of how SEO and performance goals were achieved.
-
-Bonus Features (Optional)
-Add an image zoom-in feature on hover.
-Include a feature to toggle currency (e.g., INR/USD).
-Implement pagination or filtering in the "You May Also Like" section.
-
-
-### Dummy Data
-
-Use the following JSON as a mock API response:
-
-```json
-{
-  "id": "SR0160AQ",
-  "title": "Classic Aquamarine and Diamond Three Stone Engagement Ring",
-  "base_price": 237589,
-  "exclusive_offer": "Get 20% off on making charges",
-  "reviews": 7,
-  "images": [
-    "https://via.placeholder.com/500x500?text=Main+Image",
-    "https://via.placeholder.com/100x100?text=Thumbnail1",
-    "https://via.placeholder.com/100x100?text=Thumbnail2",
-    "https://via.placeholder.com/100x100?text=Thumbnail3"
-  ],
-  "variations": {
-    "gemstone": ["Aquamarine", "Diamond", "Sapphire"],
-    "quality": ["Good", "Better", "Best", "Heirloom"],
-    "metal": ["White Gold", "Yellow Gold", "Rose Gold"],
-    "carat_weight": [1.5, 1.8, 2.0],
-    "ring_size": [6, 7, 8, 9, 10]
-  },
-  "price_breakdown": {
-    "metal": { "rate": 4567, "weight": 3.87, "value": 18528 },
-    "stones": [
-      { "type": "Aquamarine", "carat": 1.12, "value": 62748 },
-      { "type": "Diamond", "carat": 0.46, "value": 143175 }
-    ],
-    "making_charges": 6218,
-    "subtotal": 230669,
-    "gst": 6920,
-    "grand_total": 237589
-  }
-}
+The website is fully responsive and adapts to various screen sizes (mobile, tablet, and desktop), using Tailwind CSS to create a fluid and adaptive layout.
